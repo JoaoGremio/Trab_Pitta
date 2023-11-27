@@ -1,3 +1,7 @@
+//cria uma pasta com as imagens na tua pasta onde ta os arquivo .c do teu jogo
+//
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -11,7 +15,7 @@
 
 
 
-void desenharTabuleiro(ALLEGRO_BITMAP *tabuleiroImage) {
+void desenharTabuleiro(ALLEGRO_BITMAP *tabuleiroImage) { //função p garantir q o bitmap fique do tamanho que for definido o tamanho da tela
     al_draw_scaled_bitmap(tabuleiroImage, 0, 0, al_get_bitmap_width(tabuleiroImage), al_get_bitmap_height(tabuleiroImage),
                           0, 0, TAMANHO_TELA_X, TAMANHO_TELA_Y, 0);
 }
@@ -26,7 +30,7 @@ void inicializarTabuleiro(struct peca(*mat)[6][6]){
   int i,j;
 
   ALLEGRO_BITMAP *player1 = al_load_bitmap("img_trab/player1.png");
-  ALLEGRO_BITMAP *player2 = al_load_bitmap("img_trab/player2.png");
+  ALLEGRO_BITMAP *player2 = al_load_bitmap("img_trab/player2.png"); // eh assim q se declara o bitmap
     for(i=0;i<6;i++){
         for(j=0;j<6;j++){
          (*mat)[i][j].cor=0;
@@ -113,7 +117,7 @@ int main(int argc, char **argv) {
     al_register_event_source(fila_eventos, al_get_mouse_event_source());
     al_register_event_source(fila_eventos, al_get_keyboard_event_source());
     ALLEGRO_BITMAP *tabuleiroImage = al_load_bitmap("img_trab/tabuleir_.png");
-    ALLEGRO_BITMAP *tutorial = al_load_bitmap("img_trab/tutorial.png");
+    ALLEGRO_BITMAP *tutorial = al_load_bitmap("img_trab/tutorial.png"); // declaração do bitmap
 
     struct peca tabuleiro[6][6];
     struct peca pecaSelecionada;
